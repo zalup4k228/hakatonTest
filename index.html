@@ -18,12 +18,19 @@
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
 
-let tg  = window.Telegram.WebApp
+var tg  = window.Telegram.WebApp
 
 function register() {
   // Получить данные из формы
-  let agreement = document.getElementById("agreement").value;
-  let password = document.getElementById("password").value;
+  var agreement = document.getElementById("agreement").value;
+  var password = document.getElementById("password").value;
+
+  // Проверить, что данные из формы заполнены правильно
+  if (agreement === "" || password === "") {
+    // Вывести сообщение об ошибке
+    alert("Заполните все поля!");
+    return;
+  }
 
   // Создать переменную data
   let data = {
