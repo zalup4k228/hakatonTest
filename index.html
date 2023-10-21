@@ -4,19 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main.css">
-  <title>Авторизация</title>
+  <title>Telegram Web App Авторизация</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      text-align: center;
+    }
+    .form-control {
+      margin: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+    .btn-primary {
+      background-color: #0088cc;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header><h1>Авторизация</h1></header>
-  <main>
-    <form id="from">
-      <input type="text" name="agreement" placeholder="номер договора" class="form-control" maxlength="16" id="agreement">
-      <input type="password" name="password" placeholder="Пароль" class="form-control"maxlength="32" id="password">
-      <input type="hidden" name="data" id="data">
-      <button type="submit" class="btn btn-primary" id="order">Войти</button>
+  <div class="container">
+    <h1>Telegram Web App Авторизация</h1>
+    <form id="form">
+      <input type="text" name="agreement" placeholder="Номер договора" class="form-control" maxlength="16" id="agreement">
+      <input type="password" name="password" placeholder="Пароль" class "form-control" maxlength="32" id="password">
+      <button type="button" class="btn btn-primary" id="login">Войти</button>
     </form>
-  </main>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="scr.js"></script>
+  </div>
+
+  <script>
+    function sendData(data) {
+      // Здесь вы можете выполнить дополнительные действия, такие как отправка данных на сервер Telegram и обработка результата.
+      // Например, можно использовать AJAX запрос или другие методы для взаимодействия с Telegram API.
+
+      // Для примера, выведем данные в консоль:
+      console.log('Данные для отправки:', data);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('login').addEventListener('click', function() {
+        var agreement = document.getElementById('agreement').value;
+        var password = document.getElementById('password').value;
+
+        // Объединяем данные в одну переменную data
+        var data = agreement + ' ' + password;
+
+        // Вызываем функцию sendData для отправки данных
+        sendData(data);
+      });
+    });
+  </script>
 </body>
 </html>
