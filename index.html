@@ -10,8 +10,8 @@
   <header><h1>Авторизация</h1></header>
   <main>
     <form action="/register" method="post">
-      <input type="text" name="agreement" placeholder="номер договора" class="form-control" maxlength="16">
-      <input type="password" name="password" placeholder="Пароль" class="form-control"maxlength="32">
+      <input type="text" name="agreement" placeholder="номер договора" class="form-control" maxlength="16" id="agreement">
+      <input type="password" name="password" placeholder="Пароль" class="form-control"maxlength="32" id="password">
       <input type="hidden" name="data" id="data">
       <button type="submit" class="btn btn-primary" id="register">Войти</button>
     </form>
@@ -20,14 +20,12 @@
 
 function register() {
   // Получить данные из формы
-  var username = document.getElementById("username").value;
-  var email = document.getElementById("email").value;
+  var agreement = document.getElementById("agreement").value;
   var password = document.getElementById("password").value;
 
   // Создать переменную data
   let data = {
-    username: username,
-    email: email,
+    agreement: agreement,
     password: password
   };
 
