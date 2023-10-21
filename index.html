@@ -17,17 +17,17 @@
     </form>
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
-        const agreement = document.getElementById("agreement").value;
-        const password = document.getElementById("password").value;
+       const agreement = document.getElementById("agreement").value;
+const password = document.getElementById("password").value;
 
 // Формируем данные для отправки в Python
-            const data = {
-              agreement: agreement,
-              password: password
+const data = {
+  agreement: agreement,
+  password: password
 };
 
 // Отправляем данные в Python
-            telegram.sendData(data);
+window.postMessage(data, "*");
 </script>
 </body>
 </html>
