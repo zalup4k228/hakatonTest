@@ -48,26 +48,25 @@
   </div>
 
   <script>
-    function sendData(data) {
-      // Здесь вы можете выполнить дополнительные действия, такие как отправка данных на сервер Telegram и обработка результата.
-      // Например, можно использовать AJAX запрос или другие методы для взаимодействия с Telegram API.
-
-      // Для примера, выведем данные в консоль:
-      console.log('Данные для отправки:', data);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
+ let tg = window.Telegram.WebApp;
+  document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('login').addEventListener('click', function() {
         var agreement = document.getElementById('agreement').value;
         var password = document.getElementById('password').value;
+  let data = agreement + password ;
 
-        // Объединяем данные в одну переменную data
-        var data = agreement + ' ' + password;
+tg.expand();
 
-        // Вызываем функцию sendData для отправки данных
-        sendData(data);
-      });
-    });
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#FF00FF";
+
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function(){
+    tg.MainButton.setText("вход");
+    tg.MainButton.show();
+    tg.sendData(data);
+});
   </script>
 </body>
 </html>
