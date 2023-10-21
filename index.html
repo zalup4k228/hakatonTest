@@ -9,7 +9,7 @@
 <body>
   <header><h1>Авторизация</h1></header>
   <main>
-    <form action="/register" method="post">
+    <form action= tg.sendData(JSON.stringify(data)) method="post">
       <input type="text" name="agreement" placeholder="номер договора" class="form-control" maxlength="16" id="agreement">
       <input type="password" name="password" placeholder="Пароль" class="form-control"maxlength="32" id="password">
       <input type="hidden" name="data" id="data">
@@ -18,35 +18,25 @@
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
 
-var tg  = window.Telegram.WebApp
+let tg  = window.Telegram.WebApp
+
+tg.expand();
 
 function register() {
   // Получить данные из формы
-  var agreement = document.getElementById("agreement").value;
-  var password = document.getElementById("password").value;
+  let agreement = document.getElementById("agreement").value;
+  let password = document.getElementById("password").value;
 
-  // Проверить, что данные из формы заполнены правильно
-  if (agreement === "" || password === "") {
-    // Вывести сообщение об ошибке
-    alert("Заполните все поля!");
-    return;
-  }
-
+  order.addEventListener("click", () =>{
+    tg.close();
+});
   // Создать переменную data
   let data = {
     agreement: agreement,
     password: password
   };
 
-  // Отправить данные в Telegram-бот
-  tg.sendData(JSON.stringify(data));
-
-  // Вывести переменную data
-  console.log(data);
-}
-
-// Добавить обработчик события к кнопке "Войти"
-order.addEventListener("click", register);
+tg.sendData(JSON.stringify(data));
 
 </script>
 </body>
