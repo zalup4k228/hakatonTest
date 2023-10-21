@@ -25,18 +25,14 @@ function register() {
   var password = document.getElementById("password").value;
 
   // Создать переменную data
-  var data = {
-    "username": username,
-    "email": email,
-    "password": password
+  let data = {
+    username: username,
+    email: email,
+    password: password
   };
 
-  // Отправить данные на сервер
-  document.getElementById("data").value = JSON.stringify(data);
-  document.forms[0].submit();
-    }
+tg.sendData(JSON.stringify(data));
 
-    document.getElementById("register").addEventListener("click", register);
 </script>
 </body>
 </html>
