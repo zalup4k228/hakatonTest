@@ -25,16 +25,21 @@ function register() {
   var agreement = document.getElementById("agreement").value;
   var password = document.getElementById("password").value;
 
-  order.addEventListener("click", () =>{
-    tg.close();
-});
   // Создать переменную data
   let data = {
     agreement: agreement,
     password: password
   };
 
-tg.sendData(JSON.stringify(data));
+  // Отправить данные в Telegram-бот
+  tg.sendData(JSON.stringify(data));
+
+  // Вывести переменную data
+  console.log(data);
+}
+
+// Добавить обработчик события к кнопке "Войти"
+order.addEventListener("click", register);
 
 </script>
 </body>
