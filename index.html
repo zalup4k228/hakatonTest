@@ -17,7 +17,12 @@
     </form>
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
-       const agreement = document.getElementById("agreement").value;
+       function sendData(data, target) {
+  window.postMessage(data, target);
+}
+
+// Получаем значения элементов формы
+const agreement = document.getElementById("agreement").value;
 const password = document.getElementById("password").value;
 
 // Формируем данные для отправки в Python
@@ -27,7 +32,7 @@ const data = {
 };
 
 // Отправляем данные в Python
-window.postMessage(data, "*");
+sendData(data, "*");
 </script>
 </body>
 </html>
