@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 body {
-  color: secondary_bg_color;
+  color: var(--tg-theme-secondary-bg-color);
 }
 header {
   display: flex;
@@ -13,6 +13,7 @@ header {
   width: 100%;
   height: 100px;
   font-family: 'Open Sans', sans-serif;
+  color: var(--tg-theme-text-color);
 
 }
 .container {
@@ -51,6 +52,7 @@ input {
   center;
   align-items:
   center;
+  color: var(--tg-theme-bg-color);
 }
 
 .btn {
@@ -65,4 +67,5 @@ input {
   center;
   align-items:
   center;
+  color: var(--tg-theme-button-color);
 }
