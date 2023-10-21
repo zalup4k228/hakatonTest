@@ -17,22 +17,15 @@
     </form>
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
-       function sendData(data, target) {
-  window.postMessage(data, target);
-}
+MainButton.isVisible(True)
 
-// Получаем значения элементов формы
-const agreement = document.getElementById("agreement").value;
-const password = document.getElementById("password").value;
-
-// Формируем данные для отправки в Python
-const data = {
-  agreement: agreement,
-  password: password
-};
-
-// Отправляем данные в Python
-sendData(data, "*");
+let tg = window.Telegram.WebApp;
+let btn = document.getElementById("order")
+let pass = document.getElementById("password")
+let agr = document.getElementById("agreement")
+let data
+Telegram.WebApp.onEvent(
+      tg.sendData(data)
 </script>
 </body>
 </html>
