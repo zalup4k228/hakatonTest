@@ -17,12 +17,13 @@
     </form>
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
-let tg = window.Telegram.WebApp;
-let btn = document.getElementById("order")
-let pass = document.getElementById("password")
-let agr = document.getElementById("agreement")
-let data
+  let tg = window.Telegram.WebApp;
+  let btn = document.getElementById("order")
+  let pass = document.getElementById("password")
+  let agr = document.getElementById("agreement")
+  let data
 
+tg.MainButton.setText("Вы выбрали товар 1!");
 tg.MainButton.show();
 Telegram.WebApp.onEvent(
       tg.sendData(data)
