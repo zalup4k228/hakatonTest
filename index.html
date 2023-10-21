@@ -21,13 +21,13 @@
   let btn = document.getElementById("order")
   let pass = document.getElementById("password")
   let agr = document.getElementById("agreement")
-  let data
+  let data = pass + agr;
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
   
 tg.MainButton.setText("Вы выбрали товар 1!");
 tg.MainButton.show();
-Telegram.WebApp.onEvent(window.Telegram.WebView.receiveEvent("popup_closed", {"button_id": "<button id>"})
+Telegram.WebApp.onEvent(window.Telegram.WebView.receiveEvent("popup_closed", {"btn btn-primary": "<btn btn-primary>"})
       tg.sendData(data)
 </script>
 </body>
