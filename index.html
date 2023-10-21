@@ -16,6 +16,27 @@
       <button type="submit" class="btn btn-primary" id="register">Войти</button>
     </form>
   </main>
-<script src="scr.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js">
+
+function register() {
+  // Получить данные из формы
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  // Создать переменную data
+  var data = {
+    "username": username,
+    "email": email,
+    "password": password
+  };
+
+  // Отправить данные на сервер
+  document.getElementById("data").value = JSON.stringify(data);
+  document.forms[0].submit();
+    }
+
+    document.getElementById("register").addEventListener("click", register);
+</script>
 </body>
 </html>
