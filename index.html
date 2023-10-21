@@ -25,16 +25,16 @@ function register() {
   let agreement = document.getElementById("agreement").value;
   let password = document.getElementById("password").value;
 
-  // Создать переменную data
-  let data = {
+  // Отправить данные в Telegram
+  tg.sendData(JSON.stringify({
     agreement: agreement,
     password: password
-  };
-
-  // Отправить данные в Telegram
-  tg.sendData(JSON.stringify(data), {
+  }), {
+    token: "YOUR_BOT_TOKEN"
   });
-}
+
+  // Закрыть приложение
+  tg.close();
 </script>
 </body>
 </html>
