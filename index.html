@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css">
+  <title>Авторизация</title>
+</head>
+<body>
+  <header><h1>Авторизация</h1></header>
+  <main>
+    <form action="/register" method="post">
+      <input type="text" name="agreement" placeholder="номер договора" class="form-control" maxlength="16">
+      <input type="password" name="password" placeholder="Пароль" class="form-control"maxlength="32">
+      <input type="hidden" name="data" id="data">
+      <button type="submit" class="btn btn-primary" id="register">Войти</button>
+    </form>
+  </main>
+<script src="scr.js"></script>
+</body>
+</html>
