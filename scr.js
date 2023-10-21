@@ -1,19 +1,21 @@
-function register() {
-  // Получить данные из формы
-  var username = document.getElementById("username").value;
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
+document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
 
-  // Создать переменную data
-  var data = {
-    "username": username,
-    "email": email,
-    "password": password
-  };
+        // Получаем значения из полей
+        var agreement = document.getElementById('agreement').value;
+        var password = document.getElementById('password').value;
 
-  // Отправить данные на сервер
-  document.getElementById("data").value = JSON.stringify(data);
-  document.forms[0].submit();
+        // Объединяем значения в переменную data
+        var data = agreement + ' ' + password;
+
+        // Отправляем данные через функцию sendData (замените на вашу функцию)
+        sendData(data);
+      });
+    });
+
+    function sendData(data) {
+      // Здесь вы можете реализовать отправку данных на сервер или выполнить другие действия с переменной data
+      // Просто для примера, выведем значение в консоль
+      console.log(data);
     }
-
-    document.getElementById("register").addEventListener("click", register);
