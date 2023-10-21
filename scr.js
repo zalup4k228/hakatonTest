@@ -1,21 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+let tg = window.Telegram.WebApp;
 
-        // Получаем значения из полей
-        var agreement = document.getElementById('agreement').value;
-        var password = document.getElementById('password').value;
+tg.expand();
 
-        // Объединяем значения в переменную data
-        var data = agreement + ' ' + password;
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#FF00FF";
 
-        // Отправляем данные через функцию sendData (замените на вашу функцию)
-        sendData(data);
-      });
-    });
+let btn = document.getElementById("btn");
 
-    function sendData(data) {
-      // Здесь вы можете реализовать отправку данных на сервер или выполнить другие действия с переменной data
-      // Просто для примера, выведем значение в консоль
-      console.log(data);
-    }
+btn.addEventListener("click", function(){
+    tg.MainButton.setText("Сообщение отправлено!");
+    tg.MainButton.show();
+    tg.sendData("sendTestMessage");
+});
