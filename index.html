@@ -29,9 +29,7 @@ function register() {
   tg.sendData(JSON.stringify({
     agreement: agreement,
     password: password
-  }), {
-    token: "YOUR_BOT_TOKEN"
-  });
+  }));
 
   // Закрыть приложение
   tg.close();
