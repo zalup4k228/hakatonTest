@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+body {
+  color: secondary_bg_color;
+}
 header {
   display: flex;
   justify-content:
@@ -7,6 +12,7 @@ header {
   margin-right: 60px;
   width: 100%;
   height: 100px;
+  font-family: 'Open Sans', sans-serif;
 
 }
 .container {
