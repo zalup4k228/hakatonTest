@@ -27,7 +27,7 @@ tg.MainButton.color = '#2cab37';
   
 tg.MainButton.setText("Вы выбрали товар 1!");
 tg.MainButton.show();
-Telegram.WebApp.onEvent(
+Telegram.WebApp.onEvent(window.Telegram.WebView.receiveEvent("popup_closed", {"button_id": "<button id>"})
       tg.sendData(data)
 </script>
 </body>
