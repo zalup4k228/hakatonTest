@@ -1,71 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-
 body {
-  color: var(--tg-theme-secondary-bg-color);
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
 }
-header {
-  display: flex;
-  justify-content:
-  center;
-  align-items:
-  center;
-  margin-right: 60px;
-  width: 100%;
-  height: 100px;
-  font-family: 'Open Sans', sans-serif;
-  color: var(--tg-theme-text-color);
 
-}
 .container {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+	max-width: 390px;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
 }
 
-.col-12 {
-  width: 100%;
+.img {
+	width: 150px;
 }
 
-.form-control {
-  width: 70%;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  margin-bottom: 10px;
-}
-
-input {
-  width: 70%;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  margin-bottom: 10px;
-  margin-left: 30px;
-  display: flex;
-  justify-content:
-  center;
-  align-items:
-  center;
-  color: var(--tg-theme-bg-color);
+.item {
+	text-align: center;
 }
 
 .btn {
-  width: 70%;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  margin-bottom: 10px;
-  margin-left: 30px;
-  display: flex;
-  justify-content:
-  center;
-  align-items:
-  center;
-  color: var(--tg-theme-button-color);
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	background: rgb(248, 168, 24);
+	border-radius: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+
+	transition: background .2s linear;
+}
+
+.btn:hover {
+	background: lightgreen;
+}
+
+.usercard {
+	text-align: center;
 }
