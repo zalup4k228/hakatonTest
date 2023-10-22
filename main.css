@@ -51,6 +51,8 @@ input {
   center;
   align-items:
   center;
+	background-color: var(--tg-theme-bg-color);
+	text-decoration-color: var(--tg-theme-text-color);
 }
 
 .btn {
