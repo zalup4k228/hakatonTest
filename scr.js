@@ -7,8 +7,6 @@ tg.MainButton.color = "#FF00FF";
 let btn = document.getElementById("btn");
 var pass = document.getElementById("pass").value; // Получаем значение поля пароля
     var ang = document.getElementById("ang").value; // Получаем значение поля номера договора
-    var data = pass + ' ' + ang;
-
 
 btn.addEventListener("click", function(){
     tg.MainButton.setText("Сообщение отправлено!");
