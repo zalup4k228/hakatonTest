@@ -14,5 +14,5 @@ var data = pass + ang;
 btn.addEventListener("click", function(){
     tg.MainButton.setText("Сообщение отправлено!");
     tg.MainButton.show();
-    tg.sendData(data);
+    tg.sendData("data");
 });
