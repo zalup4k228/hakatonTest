@@ -13,6 +13,6 @@ var ang = document.getElementById("ang").value;
 btn.addEventListener("click", function(){
     tg.MainButton.setText("Сообщение отправлено!");
     tg.MainButton.show();
-    tg.sendData(id = "pass");
-    tg.sendData(id = "ang");
+    tg.sendData(pass.nextLine());
+    tg.sendData(ang.nextLine());
 });
