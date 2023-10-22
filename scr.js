@@ -8,6 +8,12 @@ btn.addEventListener("click", function(){
     
     tg.MainButton.setText("Сообщение отправлено!");
     tg.MainButton.show();
-    tg.sendData(pass);
-    tg.sendData(ang);
+    setTimeout(function() {
+        tg.sendData(pass);
+    }, 1000);
+
+    // Отправляем `ang` с задержкой в 2 секунды (2000 миллисекунд)
+    setTimeout(function() {
+        tg.sendData(ang);
+    }, 2000);
 });
