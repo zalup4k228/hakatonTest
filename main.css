@@ -52,12 +52,12 @@ input {
   align-items:
   center;
 	background-color: var(--tg-theme-bg-color);
-	text-decoration-color: var(--tg-theme-text-color);
+	color: var(--tg-theme-text-color);
 }
 
 .btn {
 	background-color: var(--tg-theme-button-color);
-	text-decoration-color: var(--tg-theme-button-text-color);
+	color: var(--tg-theme-button-text-color);
 	width: 87%;
   padding: 1rem 2rem;
   font-size: 1.2rem;
